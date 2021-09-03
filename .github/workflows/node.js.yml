@@ -17,8 +17,8 @@ jobs:
       - uses: actions/checkout/@v2
       - name: nmp install and build webpack
         run: |
-          nmp install
-          nmp run build
+          npm install
+          npm run build
   test:
     runs-on: ubuntu-latest
 
@@ -37,7 +37,7 @@ jobs:
         cache: 'npm'
     - name: nmp install, and test
       run: |
-        nmp install
-        nmp test
+        npm install
+        npm test
       env:
         CI: true
