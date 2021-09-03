@@ -20,7 +20,7 @@ jobs:
           nmp install
           nmp run build
   test:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
