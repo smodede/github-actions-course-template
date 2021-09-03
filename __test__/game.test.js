@@ -2,6 +2,7 @@ const Game = require('../src/game').default
 const fs = require('fs')
 
 describe('App', () => {
+  jest.setTimeout(30000);
   it('Contains the compiled JavaScript', done => {
     fs.readFile('./public/main.js', 'utf8', (err, data) => {
       expect(err).toBe(null)
@@ -12,6 +13,7 @@ describe('App', () => {
 })
 
 describe('Game', () => {
+  jest.setTimeout(30000);
   let game, p1, p2
   beforeEach(() => {
     p1 = 'Salem'
@@ -20,6 +22,7 @@ describe('Game', () => {
   })
 
   describe('Game', () => {
+    jest.setTimeout(30000);
     it('Initializes with two players', async () => {
       expect(game.p1).toBe('Salem')
       expect(game.p2).toBe('Nate')
@@ -43,6 +46,7 @@ describe('Game', () => {
   })
 
   describe('turn', () => {
+    jest.setTimeout(30000);
     it("Inserts an 'X' into the top center", async () => {
       game.turn(0, 1)
       expect(game.board[0][1]).toBe('X')
@@ -55,6 +59,7 @@ describe('Game', () => {
   })
 
   describe('nextPlayer', () => {
+    jest.setTimeout(30000);
     it('Sets the current player to be whoever it is not', async () => {
       Math.random = () => 0.4
       const game = new Game(p1, p2)
@@ -65,6 +70,7 @@ describe('Game', () => {
   })
 
   describe('hasWinner', () => {
+    jest.setTimeout(30000);
     it('Wins if any row is filled', async () => {
       for (let r = 0; r < game.board.length; r++) {
         for (let c = 0; c < game.board[r].length; c++) {
