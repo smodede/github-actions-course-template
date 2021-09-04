@@ -20,7 +20,6 @@ describe('Game', () => {
   })
 
   describe('Game', () => {
-    jest.setTimeout(30000);
     it('Initializes with two players', async () => {
       expect(game.p1).toBe('Salem')
       expect(game.p2).toBe('Nate')
