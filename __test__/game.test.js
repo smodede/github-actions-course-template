@@ -1,8 +1,7 @@
 const Game = require('../src/game').default
 const fs = require('fs')
 
-describe('App', () => {
-  
+describe('App', () => { 
   it('Contains the compiled JavaScript', done => {
     fs.readFile('./public/main.js', 'utf8', (err, data) => {
       expect(err).toBe(null)
@@ -13,7 +12,6 @@ describe('App', () => {
 })
 
 describe('Game', () => {
- 
   let game, p1, p2
   beforeEach(() => {
     p1 = 'Salem'
@@ -46,7 +44,6 @@ describe('Game', () => {
   })
 
   describe('turn', () => {
-    
     it("Inserts an 'X' into the top center", async () => {
       game.turn(0, 1)
       expect(game.board[0][1]).toBe('X')
@@ -59,7 +56,6 @@ describe('Game', () => {
   })
 
   describe('nextPlayer', () => {
-    
     it('Sets the current player to be whoever it is not', async () => {
       Math.random = () => 0.4
       const game = new Game(p1, p2)
@@ -70,7 +66,6 @@ describe('Game', () => {
   })
 
   describe('hasWinner', () => {
-    
     it('Wins if any row is filled', async () => {
       for (let r = 0; r < game.board.length; r++) {
         for (let c = 0; c < game.board[r].length; c++) {
